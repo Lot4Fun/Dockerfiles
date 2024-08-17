@@ -1,0 +1,33 @@
+# ------------------------------------------------------------------------------
+# docker build -t pykalman -f Dockerfile.pykalman .
+# docker run -it --rm --name pykalman -v `pwd`:/app/ pykalman
+# ------------------------------------------------------------------------------
+FROM python:3.9.19-slim
+ENV DEBIAN_FRONTEND=noninteractive
+
+SHELL ["/bin/bash", "-c"]
+
+# General dependencies and Python
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    python3 \
+    python3-pip \
+    python3-setuptools \
+    python3-dev \
+    && apt-get -y autoremove \
+    && apt-get -y clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install GPy
+RUN pip3 install \
+    easydict \
+    ipython \
+    matplotlib \
+    openpyxl \
+    pandas \
+    pykalman \
+    pyyaml
+
+WORKDIR /app
+
+CMD ["/bin/bash"]
