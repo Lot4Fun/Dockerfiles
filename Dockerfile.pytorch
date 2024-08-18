@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# docker build -t pytorch -f Dockerfile.pytorch .
+# docker build -t pytorch --no-cache -f Dockerfile.pytorch .
 # docker run -it --rm --gpus all --name pytorch -v `pwd`:/app/ pytorch
 # ------------------------------------------------------------------------------
 ARG CUDA_VER=11.3.1

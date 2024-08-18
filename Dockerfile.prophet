@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# docker build -t prophet -f Dockerfile.prophet .
+# docker build -t prophet --no-cache -f Dockerfile.prophet .
 # docker run -it --rm --name prophet -v `pwd`:/app/ prophet
 # ------------------------------------------------------------------------------
 FROM python:3.9.19-slim
@@ -9,11 +9,12 @@ SHELL ["/bin/bash", "-c"]
 
 # General dependencies and Python
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-    python3 \
-    python3-pip \
-    python3-setuptools \
-    python3-dev \
+    && apt-get upgrade -y \
+    # && apt-get install -y --no-install-recommends \
+    # python3 \
+    # python3-pip \
+    # python3-setuptools \
+    # python3-dev \
     && apt-get -y autoremove \
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/*

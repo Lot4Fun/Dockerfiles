@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# docker build -t pykalman -f Dockerfile.pykalman .
+# docker build -t pykalman --no-cache -f Dockerfile.pykalman .
 # docker run -it --rm --name pykalman -v `pwd`:/app/ pykalman
 # ------------------------------------------------------------------------------
 FROM python:3.9.19-slim
@@ -9,11 +9,12 @@ SHELL ["/bin/bash", "-c"]
 
 # General dependencies and Python
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-    python3 \
-    python3-pip \
-    python3-setuptools \
-    python3-dev \
+    && apt-get upgrade -y \
+    # && apt-get install -y --no-install-recommends \
+    # python3 \
+    # python3-pip \
+    # python3-setuptools \
+    # python3-dev \
     && apt-get -y autoremove \
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/*
