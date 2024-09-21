@@ -2,8 +2,8 @@
 # docker build -t pytorch --no-cache -f Dockerfile.pytorch .
 # docker run -it --rm --gpus all --name pytorch -v `pwd`:/app/ pytorch
 # ------------------------------------------------------------------------------
-ARG CUDA_VER=11.3.1
-FROM nvidia/cuda:${CUDA_VER}-cudnn8-runtime-ubuntu20.04
+ARG CUDA_VER=12.3.2
+FROM nvidia/cuda:${CUDA_VER}-cudnn9-runtime-ubuntu22.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 SHELL ["/bin/bash", "-c"]
