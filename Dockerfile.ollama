@@ -1,0 +1,15 @@
+# ------------------------------------------------------------------------------
+# docker build -t ollama --no-cache -f Dockerfile .
+# docker run -d --gpus=all -v `pwd`:/root/.ollama -p 11434:11434 --name ollama ollama
+#
+# docker exec -it ollama ollama run llama3.2
+#
+# sample request:
+#
+# curl http://localhost:11434/api/generate -d '{
+#   "model": "llama3.2",
+#   "prompt":"Why is the sky blue?",
+#   "stream": false
+# }'
+# ------------------------------------------------------------------------------
+FROM ollama/ollama:latest
