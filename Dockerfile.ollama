@@ -4,8 +4,17 @@
 #
 # docker exec -it ollama ollama run llama3.2
 #
-# sample request:
 #
+# Generate mode:
+#
+# curl http://localhost:11434/api/generate -d '{
+#   "model": "llama3.2",
+#   "prompt":"Why is the sky blue?",
+#   "stream": false
+# }'
+#
+#
+# Chat Mode:
 # curl http://localhost:11434/api/generate -d '{
 #   "model": "llama3.2",
 #   "prompt":"Why is the sky blue?",
