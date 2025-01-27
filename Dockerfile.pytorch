@@ -35,6 +35,10 @@ RUN pip3 install \
     scipy \
     torch \
     torchvision \
-    torchaudio
+    torchaudio \
+    # for transformers (Hugging Face)
+    accelerate \
+    datasets \
+    transformers
 
 WORKDIR /app
