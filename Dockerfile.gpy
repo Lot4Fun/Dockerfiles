@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 SHELL ["/bin/bash", "-c"]
 
-# General dependencies and Python
+# Update and cleanup
 RUN apt-get update \
     && apt-get -y autoremove \
     && apt-get -y clean \
