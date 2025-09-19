@@ -2,7 +2,7 @@
 # docker build -t pydata --no-cache -f Dockerfile.pydata .
 # docker run -it --rm --name pydata -v `pwd`:/app/ pydata
 # ------------------------------------------------------------------------------
-FROM python:3.9.21-slim
+FROM python:3.13.7-slim-bookworm
 ENV DEBIAN_FRONTEND=noninteractive
 
 SHELL ["/bin/bash", "-c"]
