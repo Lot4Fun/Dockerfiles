@@ -28,7 +28,8 @@ RUN pip3 install \
     pandas \
     requests \
     scikit-learn \
-    scipy
+    scipy \
+    seaborn
 
 WORKDIR /app
 
